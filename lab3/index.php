@@ -57,7 +57,9 @@
                 <?php endforeach;?>
                 <td>
                   <form action="index.php" method="post">
-                  <button class="waves-effect waves-light btn-small"><i class="material-icons left">delete</i></button>
+                  <button class="waves-effect waves-light btn-small">
+                    <i style="margin-right: 0" class="material-icons left">delete</i>
+                  </button>
                   <input type="hidden" name="id" value="<?= $rand["id"] ?>">
                   </form>
                 </td>
