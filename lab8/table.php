@@ -1,10 +1,10 @@
 <?php
-  require_once('./secure.php');  
+  require_once('./secure.php');
 ?>
 <?php
   if (isset($loggedIn)):
 ?>
-<table>
+<table class="responsive-table highlight striped">
   <thead>
     <tr>
       <?php foreach($keys as $key): ?>
@@ -27,26 +27,28 @@
         <?php else: ?>
           <?= $cell ?>
         <?php endif; ?>
-      </td>        
-      <?php endforeach; ?>    
-      <td>
-        <form action="delete.php" method="post" style="display: inline-block">
-          <input type="hidden" name="userId" value="<?= $row['userId']; ?>">
-          <input type="hidden" name="id" value="<?= $row['id']; ?>">
-          <button class="waves-effect waves-light red lighten-4 btn">
-            <i class="material-icons red-text">delete</i>
-          </button>
-        </form>
-        <form action="editForm.php" method="get" style="display: inline-block">
-          <input type="hidden" name="userId" value="<?= $row['userId']; ?>">
-          <input type="hidden" name="id" value="<?= $row['id']; ?>">
-          <button class="waves-effect waves-light blue lighten-4 btn">
-            <i class="material-icons blue-text">edit</i>
-          </button>
-        </form>
       </td>
-    </tr>  
-    <?php endforeach; ?>    
+      <?php endforeach; ?>
+      <td>
+        <div style="display: flex; justify-content: flex-end">
+          <form action="delete.php" method="post" style="display: inline-block; margin: 0 1em">
+            <input type="hidden" name="userId" value="<?= $row['userId']; ?>">
+            <input type="hidden" name="id" value="<?= $row['id']; ?>">
+            <button class="waves-effect waves-light red lighten-4 btn btn-small">
+              <i class="material-icons red-text">delete</i>
+            </button>
+          </form>
+          <form action="editForm.php" method="get" style="display: inline-block; margin: 0 1em">
+            <input type="hidden" name="userId" value="<?= $row['userId']; ?>">
+            <input type="hidden" name="id" value="<?= $row['id']; ?>">
+            <button class="waves-effect waves-light blue lighten-4 btn btn-small">
+              <i class="material-icons blue-text">edit</i>
+            </button>
+          </form>
+        </div>
+      </td>
+    </tr>
+    <?php endforeach; ?>
   </tbody>
 </table>
 <?php endif; ?>
