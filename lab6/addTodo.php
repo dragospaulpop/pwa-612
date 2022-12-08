@@ -1,10 +1,10 @@
 <?php
-  require_once('./secure.php');  
-    
+  require_once('./secure.php');
+
   if (isset($loggedIn)) {
-    $title = isset($_POST['title']) ? $_POST['title'] : false;
-      
-      if ($title !== false) {
+    $title = isset($_POST['title']) ? trim($_POST['title']) : false;
+
+      if ($title !== false && strlen($title) > 0) {
         require_once('./readDb.php');
 
         $max = 0;

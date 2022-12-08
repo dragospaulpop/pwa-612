@@ -1,8 +1,8 @@
 <?php
    $user = isset($_POST['user']) ? trim($_POST['user']) : null;
    $pass = isset($_POST['pass']) ? trim($_POST['pass']) : null;
-   
-   if ($user && $pass) {    
+
+   if ($user && $pass) {
     if ($user === 'User1' && $pass === 'pass') {
       session_start();
       $_SESSION['user'] = 'User1';
@@ -17,7 +17,7 @@
 <html lang="en">
 <?php include('./head.php'); ?>
 <body>
-<form action="login.php" method="post">  
+<form action="login.php" method="post">
   <?php if (isset($msg)): ?>
     <p class="red-text"><?= $msg; ?></p>
   <?php endif; ?>
